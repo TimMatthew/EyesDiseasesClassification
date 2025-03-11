@@ -12,3 +12,6 @@ The dataset contains 4 classes that depict glaucoma, cataract, diabetic retinopa
 ![Cataract](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/Figure_3.png)
 ![Healthy eye](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/Figure_4.png)
 ![Glaucoma](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/Figure_6.png)
+
+The dataset was split by `train`, `val` and `test`:
+
