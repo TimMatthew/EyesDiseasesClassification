@@ -4,7 +4,8 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from misc import (dataset_to_train, dataset_to_val,
                   dataset_to_test, numbers_of_files,
-                  show_image_and_label, count_occurences_per_classes, depict_class_images_share)
+                  show_image_and_label, count_occurences_per_classes,
+                  depict_class_images_share, calculate_normalization)
 from constants import (TRAIN_PATH, VAL_PATH, TEST_PATH,
                        AUGMENT_TRANSFORM as aug, DEFAULT_TRANSFORM as no_aug)
 import numpy as np
@@ -30,16 +31,19 @@ if __name__ == '__main__':
     classes = train_set.classes
     print("Classes of datasets: ", classes)
 
-    images, labels = next(iter(train_loader))
+    # all_data = torch.cat([batch[0] for batch in train_loader], dim=0)
+    # calculate_normalization(all_data)
 
-    show_image_and_label(images[3], labels[3], train_set.classes)
-    show_image_and_label(images[5], labels[5], train_set.classes)
-    show_image_and_label(images[14], labels[14], train_set.classes)
-    show_image_and_label(images[8], labels[8], train_set.classes)
-    show_image_and_label(images[26], labels[26], train_set.classes)
-    show_image_and_label(images[16], labels[16], train_set.classes)
-    show_image_and_label(images[11], labels[11], train_set.classes)
-
+    # images, labels = next(iter(train_loader))
+    #
+    # show_image_and_label(images[3], labels[3], train_set.classes)
+    # show_image_and_label(images[5], labels[5], train_set.classes)
+    # show_image_and_label(images[14], labels[14], train_set.classes)
+    # show_image_and_label(images[8], labels[8], train_set.classes)
+    # show_image_and_label(images[26], labels[26], train_set.classes)
+    # show_image_and_label(images[16], labels[16], train_set.classes)
+    # show_image_and_label(images[11], labels[11], train_set.classes)
+    #
     train_labels_occurrences = count_occurences_per_classes(train_loader)
     val_labels_occurrences = count_occurences_per_classes(val_loader)
     test_labels_occurrences = count_occurences_per_classes(test_loader)

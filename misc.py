@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import matplotlib
 import os
 import shutil
-from torch import cuda, cat, bincount
+from torch import cuda, cat, bincount, norm
+import torch
 
 matplotlib.use('TkAgg')
 
@@ -106,7 +107,15 @@ def depict_class_images_share(classes, image_set):
     plt.bar(classes, image_set.numpy(), color='skyblue')
     plt.xlabel('Class')
     plt.ylabel('Occurences')
-    plt.title('Share of images per class in training part')
+    #plt.title('Share of images per class in training part')
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
 
+
+def calculate_normalization(loader):
+
+    dataset_mean = torch.mean(loader, dim=(0, 2, 3), keepdim=True)
+    dataset_std = torch.std(loader, dim=(0, 2, 3), keepdim=True, unbiased=False)
+
+    print("dataset_mean: ", dataset_mean.squeeze())
+    print("dataset_std: ", dataset_std.squeeze())
