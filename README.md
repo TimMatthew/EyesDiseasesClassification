@@ -15,3 +15,8 @@ The dataset contains 4 classes that depict glaucoma, cataract, diabetic retinopa
 
 The dataset was split by `train`, `val` and `test`:
 
+The following frameworks used in the project:
+
++ **PyTorch (torch, torchvision)**
++ **MatPlotLib**
++ **Seaborn** (to be continued)
