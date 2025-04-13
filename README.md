@@ -83,6 +83,24 @@ Hence, the CNN architecture
 + AdaptiveAvgPool2d
 + FC
 
+In all cases the following augmention was used:
+
+````
+AUGMENT_TRANSFORM = v2.Compose([
+    transforms.Resize((254, 254)),
+    transforms.RandomResizedCrop(254, scale=(0.8, 1.0), ratio=(0.9, 1.1)),
+    transforms.RandomHorizontalFlip(p=0.5),
+    transforms.ToTensor(),
+    transforms.Normalize(MY_MEAN, MY_STD),
+])
+
+DEFAULT_TRANSFORM = v2.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize(MY_MEAN, MY_STD),  # BasicEDA Custom parameters
+])
+````
+
 
 ## Metrics Analysis
 
@@ -178,3 +196,6 @@ ResNet50 loss. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight d
 ResNet50 confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight decay: 1e-5, Backbone Weight decay: 1e-6
 
 ### Automative optimization
+
+
+**ghfgh**
