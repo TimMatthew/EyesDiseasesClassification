@@ -43,7 +43,7 @@ The dataset was split by `train`, `val` and `test` parts with the 8-1-1 share:
 ### The images proportion per class
 
 ![Train images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/train_histogram.png)
-![Validation images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/val_histgoram.png)
+![Validation images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/val_histogram.png)
 ![Test images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/test_histgoram.png)
 
 ### Dataset Outliers
