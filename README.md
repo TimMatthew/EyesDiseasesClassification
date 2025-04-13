@@ -121,29 +121,29 @@ Model accuracy. Learning rate: 1e-3, Weight decay: 1e-4
 
 ### ResNet50 with a single optimizer
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies22.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/accuracies22.png)
 
 Model accuracy. Learning rate: 1e-4, Weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/lossess22.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/lossess22.png)
 
 Model losses. Learning rate: 1e-4, Weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix22.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/conf-matrix22.png)
 
 Model testing confusion matrix. Learning rate: 1e-4, Weight decay: 1e-5
 
 ### ResNet50 with multiple optimizer
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies21.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/accuracies20.png)
 
 Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight decay: 1e-5, Backbone Weight decay: 1e-6,
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses21.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/losses20.png)
 
 Model accuracy. Learning rate: 1e-4, Weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix21.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/conf-matrix20.png)
 
 Model accuracy. Learning rate: 1e-4, Weight decay: 1e-5
 
