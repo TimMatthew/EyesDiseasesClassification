@@ -91,11 +91,18 @@ Hence, the CNN architecture
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies6.png)
 
-Learning rate: 1e-3, Weight decay: 1e-4
+Model accuracy. Learning rate: 1e-3, Weight decay: 1e-4
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies7.png)
 
-Learning rate: 1e-4, Weight decay: 1e-5
+Model loss. Learning rate: 1e-3, Weight decay: 1e-4
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses6.png)
+
+Model accuracy .Learning rate: 1e-4, Weight decay: 1e-5
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses7.png)
+
 
 Learning rate: 
 ### Testing metrics and Confusion matrix
