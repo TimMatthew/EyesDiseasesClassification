@@ -198,4 +198,47 @@ ResNet50 confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5,
 ### Automative optimization
 
 
-**ghfgh**
+The optimal hyperparameters values were found in range of 1e-5 and 1e-2.
+
+````
+def objective(my_trial: trial.Trial):
+    backbone_lr = my_trial.suggest_float("backbone_lr", 1e-5, 1e-2, log=True)
+    fc_lr = my_trial.suggest_float("fc_lr", 1e-5, 1e-2, log=True)
+    backbone_decay = my_trial.suggest_float("backbone_decay", 1e-5, 1e-2, log=True)
+    fc_decay = my_trial.suggest_float("fc_decay", 1e-5, 1e-2, log=True)
+
+    my_cnn = deploy_model()
+
+    _, _, best_val_accs, _, _ = train(my_cnn, train_loader, val_loader, fc_lr, backbone_lr, fc_decay, backbone_decay)
+    best_val_acc = max(best_val_accs)
+
+    return best_val_acc
+````
+
+Then Quasi Monte carlo (QMS) sampler were used for search as more advanced method to find the best values:
+
+````
+def automative_optimization():
+
+    sampler = samplers.QMCSampler()
+    study = create_study(sampler=sampler, direction="maximize")
+    study.optimize(objective, n_trials=10)
+
+    # Best is trial 1 with value: VALID ACC - 74.10926365795724.
+    # Best LR and Decay values
+    # found: {'backbone_lr': 0.00014930731216792622, 'fc_lr': 1.648555347420118e-05,
+    #         'backbone_decay': 0.00048070406755845133, 'fc_decay': 2.129394268397047e-05}
+    best_params = study.best_params
+    print("Best LR and Decay values found: ", best_params)
+
+    return best_params
+````
+
+The following results were extracted:
+
+**Custom CNN with multiple opitmiziers. Automative hyperparameters optimization**
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies13.png)
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses13.png)
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix13.png)
