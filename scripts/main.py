@@ -181,14 +181,14 @@ if __name__ == '__main__':
     # show_dataset_info()
     # automative_optimization()
 
-    # my_cnn = deploy_model()
-    # train(my_cnn, train_loader, val_loader,
-    #       1e-4,
-    #       1e-5,
-    #       1e-5,
-    #       1e-6, 20, True)
-    # test(my_cnn, test_loader, test_set.classes, 20, True)
+    my_cnn = deploy_model()
+    train(my_cnn, train_loader, val_loader,
+          1e-4,
+          1e-5,
+          1e-5,
+          1e-6, 30, True)
+    test(my_cnn, test_loader, test_set.classes, 30, True)
 
-    pretrained_model = deploy_pre_trained()
-    train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 28, True, True, True)
-    test(pretrained_model, test_loader, train_set.classes, 28, True)
+    # pretrained_model = deploy_pre_trained()
+    # train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 28, True, True, True)
+    # test(pretrained_model, test_loader, train_set.classes, 28, True)

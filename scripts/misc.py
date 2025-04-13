@@ -182,27 +182,27 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
         if is_differ:
             backbone_opt = optim.Adam(model.parameters(), lr=bone_lr, weight_decay=bone_decay)
             fc_opt = optim.Adam(model.classifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
-            fc_scheduler = StepLR(fc_opt, 10, 0.1)
-            backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
-            FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
-            BoneReduceLROnPlateauScheduler = ReduceLROnPlateau(backbone_opt, mode='max', factor=0.5, patience=3)
+            # fc_scheduler = StepLR(fc_opt, 10, 0.1)
+            # backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
+            # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
+            # BoneReduceLROnPlateauScheduler = ReduceLROnPlateau(backbone_opt, mode='max', factor=0.5, patience=3)
         else:
             optimizer = optim.Adam(model.parameters(), lr=pretrained_lr, weight_decay=pretrained_decay)
-            scheduler = StepLR(optimizer, 10, 0.1)
-            reduceLROnPlateauScheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
+            # scheduler = StepLR(optimizer, 10, 0.1)
+            # reduceLROnPlateauScheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
 
     else:
         if is_differ:
             backbone_opt = optim.Adam(model.backbone.parameters(), lr=bone_lr, weight_decay=bone_decay)
-            fc_opt = optim.Adam(model.сlassifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
-            fc_scheduler = StepLR(fc_opt, 10, 0.1)
-            backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
-            FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
-            BoneReduceLROnPlateauScheduler = ReduceLROnPlateau(backbone_opt, mode='max', factor=0.5, patience=3)
+            fc_opt = optim.Adam(model.classifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
+            # fc_scheduler = StepLR(fc_opt, 10, 0.1)
+            # backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
+            # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
+            # BoneReduceLROnPlateauScheduler = ReduceLROnPlateau(backbone_opt, mode='max', factor=0.5, patience=3)
         else:
             optimizer = optim.Adam(model.parameters(), lr=pretrained_lr, weight_decay=pretrained_decay)
-            scheduler = StepLR(optimizer, 10, 0.1)
-            reduceLROnPlateauScheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
+            # scheduler = StepLR(optimizer, 10, 0.1)
+            # reduceLROnPlateauScheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
 
     train_losses = []
     train_accs = []
@@ -278,14 +278,14 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
             epoch_acc = 100 * valid_correct / valid_total
             epoch_loss = valid_loss / len(valid_loader)
 
-            if is_pretrained and is_differ:
-                BoneReduceLROnPlateauScheduler.step(epoch_acc)
-                FCReduceLROnPlateauScheduler.step(epoch_acc)
-            elif not is_pretrained and is_differ:
-                BoneReduceLROnPlateauScheduler.step(epoch_acc)
-                FCReduceLROnPlateauScheduler.step(epoch_acc)
-            elif not is_differ:
-                reduceLROnPlateauScheduler.step(epoch_acc)
+            # if is_pretrained and is_differ:
+            #     BoneReduceLROnPlateauScheduler.step(epoch_acc)
+            #     FCReduceLROnPlateauScheduler.step(epoch_acc)
+            # elif not is_pretrained and is_differ:
+            #     BoneReduceLROnPlateauScheduler.step(epoch_acc)
+            #     FCReduceLROnPlateauScheduler.step(epoch_acc)
+            # elif not is_differ:
+            #     reduceLROnPlateauScheduler.step(epoch_acc)
 
             valid_results = (f"\nValidation Accuracy: {epoch_acc:.4f}%, "
                              f"Loss: {epoch_loss:.4f}")
@@ -348,7 +348,7 @@ def test(model, test_loader, class_names, number=999, to_save=False):
         plt.xlabel("Predicted labels")
         plt.ylabel("True labels")
         plt.title("Confusion Matrix Test")
-        plt.savefig(rf"..\effnetb0_stats\conf-matrix{number}.png")
+        plt.savefig(rf"..\stats\conf-matrix{number}.png")
         plt.clf()
     plt.show()
 
@@ -369,7 +369,7 @@ def show_stats(train_accs, valid_accs, train_losses, valid_losses,
         plt.xlabel('Epochs')
         plt.ylabel('Accuracy (%)')
         plt.legend()
-        plt.savefig(rf"..\effnetb0_stats\accuracies{number}.png")
+        plt.savefig(rf"..\stats\accuracies{number}.png")
         plt.clf()
 
         plt.plot(epochs, train_losses, 'y', label='Train loss')
@@ -379,7 +379,7 @@ def show_stats(train_accs, valid_accs, train_losses, valid_losses,
         plt.xlabel('Epochs')
         plt.ylabel('Loss')
         plt.legend()
-        plt.savefig(rf"..\effnetb0_stats\losses{number}.png")
+        plt.savefig(rf"..\stats\losses{number}.png")
         plt.clf()
 
 

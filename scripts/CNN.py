@@ -44,7 +44,7 @@ class MyCNN(nn.Module):
 
         self.adaptPool = nn.AdaptiveAvgPool2d(1)
 
-        self.fc = nn.Sequential(
+        self.classifier = nn.Sequential(
             nn.Flatten(),
             nn.Dropout(0.3),
             nn.Linear(baseline_maps * 32, baseline_maps * 16),
@@ -58,7 +58,7 @@ class MyCNN(nn.Module):
     def forward(self, x):
         x = self.backbone(x)
         x = self.adaptPool(x)
-        x = self.fc(x)
+        x = self.classifier(x)
         return x
 
 
