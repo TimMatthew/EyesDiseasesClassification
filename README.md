@@ -87,10 +87,17 @@ Hence, the CNN architecture
 ## Metrics Analysis
 
 ### Loss-Accuracy on training and validation
-1st configuration is custom CNN
+1st configuration is custom CNN with a single optimizer.
 
-![]()
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracy6.png)
 
+Learning rate: 1e-3, Weight decay: 1e-4
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracy7.png)
+
+Learning rate: 1e-4, Weight decay: 1e-5
+
+Learning rate: 
 ### Testing metrics and Confusion matrix
 
 ### Automative optimization
