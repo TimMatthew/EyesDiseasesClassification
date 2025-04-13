@@ -242,3 +242,21 @@ The following results were extracted:
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses13.png)
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix13.png)
+
+
+### 5-Folds Cross-validation
+
+Next the experiments with K-Folds have been performedm where opitmized hyperparameters were used for training
+
+FC LR: 1.648555347420118e-05,
+Bone LR: 0.00014930731216792622,
+FC Decay: 2.129394268397047e-05,
+Bone Deacy: 0.00048070406755845133
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/folds_train_accs.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/folds_valid_accs.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/folds_train_loss.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/folds_valid_loss.png)
+
+
+
