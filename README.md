@@ -140,7 +140,7 @@ Model confusion matrix. FC Learning rate: 1e-4, FC Weight decay: 1e-5, Backbone 
 
 ResNet50 accuracy. Learning rate: 1e-4, Weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/lossess22.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/losses22.png)
 
 ResNet50 losses. Learning rate: 1e-4, Weight decay: 1e-5
 
