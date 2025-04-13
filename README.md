@@ -163,7 +163,18 @@ ResNet50 loss. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight d
 
 ResNet50 confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight decay: 1e-5, Backbone Weight decay: 1e-6
 
+### ResNet50 with multiple optimizer. 2 Freezed layers
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/accuracies26_layer3-4_freezed.png)
+
+ResNet50 accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight decay: 1e-5, Backbone Weight decay: 1e-6
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/losses26_layer3-4_freezed.png)
+
+ResNet50 loss. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight decay: 1e-5, Backbone Weight decay: 1e-6
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/conf-matrix_layer3-4_freezed.png)
+
+ResNet50 confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC Weight decay: 1e-5, Backbone Weight decay: 1e-6
+
 ### Automative optimization
-
-### Transfer learining
-
