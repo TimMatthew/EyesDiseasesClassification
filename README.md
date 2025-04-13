@@ -121,7 +121,7 @@ Model testing confusion matrix. Learning rate: 1e-4, Weight decay: 1e-5
 
 ### Custom CNN with multiple optimizers
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies0.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies2.png)
 
 Model accuracy. FC Learning rate: 1e-4, FC Weight decay: 1e-5, Backbone Learning rate: 1e-5, Backbone Weight decay: 1e-6
 
