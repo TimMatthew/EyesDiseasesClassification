@@ -136,11 +136,11 @@ Model confusion matrix. FC Learning rate: 1e-4, FC Weight decay: 1e-5, Backbone 
 
 ### ResNet50 with a single optimizer
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/accuracies22.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/accuracies2.png)
 
 ResNet50 accuracy. Learning rate: 1e-4, Weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/lossess22.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/resnet50_stats/lossess2.png)
 
 ResNet50 losses. Learning rate: 1e-4, Weight decay: 1e-5
 
