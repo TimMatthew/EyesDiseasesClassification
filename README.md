@@ -147,9 +147,6 @@ Model accuracy. FC Learning rate: 1e-3, FC weight decay: 1e-4
 
 Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies34.png)
-
-Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC weight decay: 1e-5, FC weight decay: 1e-6
 
 **Losses**
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses33.png)
@@ -160,9 +157,6 @@ Model loss. FC Learning rate: 1e-3, FC weight decay: 1e-4
 
 Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses34.png)
-
-Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC weight decay: 1e-5, FC weight decay: 1e-6
 
 **Confusion matrices**
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix33.png)
@@ -173,23 +167,40 @@ Model confusion matrix. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
 Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix34.png)
-
-Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC weight decay: 1e-5, FC weight decay: 1e-6
 
 ### Custom CNN with multiple optimizers
+
+
+**Accuracies**
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies2.png)
 
 Model accuracy. FC Learning rate: 1e-4, FC Weight decay: 1e-5, Backbone Learning rate: 1e-5, Backbone Weight decay: 1e-6
 
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies34.png)
+
+Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC weight decay: 1e-5, FC weight decay: 1e-6
+
+**Losses**
+
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses2.png)
 
 Model loss. FC Learning rate: 1e-4, FC Weight decay: 1e-5, Backbone Learning rate: 1e-5, Backbone Weight decay: 1e-6
 
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses34.png)
+
+Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC weight decay: 1e-5, FC weight decay: 1e-6
+
+**Confusion matrices**
+
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix20.png)
 
 Model confusion matrix. FC Learning rate: 1e-4, FC Weight decay: 1e-5, Backbone Learning rate: 1e-5, Backbone Weight decay: 1e-6
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix34.png)
+
+Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5, FC weight decay: 1e-5, FC weight decay: 1e-6
 
 
 ### ResNet50 with a single optimizer
