@@ -104,7 +104,7 @@ DEFAULT_TRANSFORM = v2.Compose([
 
 ## Metrics Analysis
 
-### Custom CNN with a single optimizer
+### Custom CNN with no decays
 
 **Accuracies**
 
@@ -136,6 +136,7 @@ Model loss. Learning rate: 1e-3, Weight decay: 1e-4
 
 Model testing confusion matrix. Learning rate: 1e-4, Weight decay: 1e-5
 
+### Custom CNN with a single optimizer
 
 ### Custom CNN with multiple optimizers
 
