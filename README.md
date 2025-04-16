@@ -42,9 +42,9 @@ The dataset was split by `train`, `val` and `test` parts with the 8-1-1 share:
 
 ### The images proportion per class
 
-![Train images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/train_histgoram.png)
-![Validation images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/val_histgoram.png)
-![Test images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/test_histgoram.png)
+![Train images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/train_histogram.png)
+![Validation images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/val_histogram.png)
+![Test images share per class](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/readme_samples/test_histogram.png)
 
 ### Dataset Outliers
 
@@ -104,38 +104,38 @@ DEFAULT_TRANSFORM = v2.Compose([
 
 ## Metrics Analysis
 
-### Custom CNN with a single optimizer
+### Custom CNN with no decays
 
 **Accuracies**
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies6.png)
 
-Model accuracy. Learning rate: 1e-3, Weight decay: 1e-4
+Model accuracy. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies7.png)
 
-Model accuracy .Learning rate: 1e-4, Weight decay: 1e-5
+Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
 **Losses**
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses6.png)
 
-Model loss. Learning rate: 1e-3, Weight decay: 1e-4
-
+Model loss. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses7.png)
 
-Model loss. Learning rate: 1e-4, Weight decay: 1e-5
+Model loss. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
 **Confusion matrices**
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix6.png)
 
-Model loss. Learning rate: 1e-3, Weight decay: 1e-4
+Model testing confusion matrix. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix7.png)
 
-Model testing confusion matrix. Learning rate: 1e-4, Weight decay: 1e-5
+Model testing confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
+### Custom CNN with a single optimizer
 
 ### Custom CNN with multiple optimizers
 
