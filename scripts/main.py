@@ -177,17 +177,18 @@ if __name__ == '__main__':
 
     classes = train_set.classes
     print("Classes of datasets: ", classes)
-    deploy_pre_trained()
+    # deploy_pre_trained()
     # show_dataset_info()
     # automative_optimization()
 
     my_cnn = deploy_model()
+    print(my_cnn)
     train(my_cnn, train_loader, val_loader,
           1e-4,
+          0,
           1e-5,
-          1e-5,
-          1e-6, 30, True)
-    test(my_cnn, test_loader, test_set.classes, 30, True)
+          0, 32, False, True)
+    test(my_cnn, test_loader, test_set.classes, 32, True)
 
     # pretrained_model = deploy_pre_trained()
     # train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 28, True, True, True)

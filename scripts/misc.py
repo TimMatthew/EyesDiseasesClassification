@@ -200,7 +200,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
             # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
             # BoneReduceLROnPlateauScheduler = ReduceLROnPlateau(backbone_opt, mode='max', factor=0.5, patience=3)
         else:
-            optimizer = optim.Adam(model.parameters(), lr=pretrained_lr, weight_decay=pretrained_decay)
+            optimizer = optim.Adam(model.parameters(), lr=fc_lr, weight_decay=fc_decay)
             # scheduler = StepLR(optimizer, 10, 0.1)
             # reduceLROnPlateauScheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
 
@@ -217,7 +217,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
         running_loss = 0.0
         correct = 0
         total = 0
-        process = 0  # tracking a process of training per epoch
+        process = 0
 
         for inputs, labels in train_loader:
             process += 1
@@ -305,7 +305,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
         show_stats(train_accs, valid_accs, train_losses, valid_losses, fc_lr, bone_lr, fc_decay, bone_decay, number,
                    to_save_stats)
     else:
-        show_stats(train_accs, valid_accs, train_losses, valid_losses, pretrained_lr, 0.0, pretrained_decay, 0.0,
+        show_stats(train_accs, valid_accs, train_losses, valid_losses, fc_lr, 0.0, fc_decay, 0.0,
                    number,
                    to_save_stats)
 
