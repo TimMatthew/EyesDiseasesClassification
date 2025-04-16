@@ -139,17 +139,17 @@ Model testing confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 
 
 **Accuracies**
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies32.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies33.png)
 
 Model accuracy. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
 **Losses**
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses32.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses33.png)
 
 Model loss. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
 **Confusion matrices**
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies32.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies33.png)
 
 Model confusion matrix. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
