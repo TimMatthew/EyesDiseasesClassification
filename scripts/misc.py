@@ -349,7 +349,7 @@ def test(model, test_loader, class_names, number=999, to_save=False):
         plt.xlabel("Predicted labels")
         plt.ylabel("True labels")
         plt.title("Confusion Matrix Test")
-        plt.savefig(rf"..\resnet50_stats\conf-matrix{number}.png")
+        plt.savefig(rf"..\stats\conf-matrix{number}.png")
         plt.clf()
     plt.show()
 
@@ -370,7 +370,7 @@ def show_stats(train_accs, valid_accs, train_losses, valid_losses,
         plt.xlabel('Epochs')
         plt.ylabel('Accuracy (%)')
         plt.legend()
-        plt.savefig(rf"..\resnet50_stats\accuracies{number}.png")
+        plt.savefig(rf"..\stats\accuracies{number}.png")
         plt.clf()
 
         plt.plot(epochs, train_losses, 'y', label='Train loss')
@@ -380,7 +380,7 @@ def show_stats(train_accs, valid_accs, train_losses, valid_losses,
         plt.xlabel('Epochs')
         plt.ylabel('Loss')
         plt.legend()
-        plt.savefig(rf"..\resnet50_stats\losses{number}.png")
+        plt.savefig(rf"..\stats\losses{number}.png")
         plt.clf()
 
 

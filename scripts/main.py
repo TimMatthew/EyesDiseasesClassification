@@ -180,11 +180,11 @@ if __name__ == '__main__':
     my_cnn = deploy_model()
     print(my_cnn)
     train(my_cnn, train_loader, val_loader,
-          1e-3,
           1e-4,
+          1e-5,
           0,
           0, 40, True, True, False)
-    test(my_cnn, test_loader, test_set.classes, 40, True)
+    test(my_cnn, test_loader, test_set.classes, 41, True)
 
     # pretrained_model = deploy_pre_trained()
     # train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 21, True, False, True)
