@@ -182,7 +182,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
     if is_pretrained:
         if is_differ:
             backbone_opt = optim.Adam(model.parameters(), lr=bone_lr, weight_decay=bone_decay)
-            fc_opt = optim.Adam(model.fc.parameters(), lr=fc_lr, weight_decay=fc_decay)
+            fc_opt = optim.Adam(model.classifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
             # fc_scheduler = StepLR(fc_opt, 10, 0.1)
             # backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
             # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
@@ -195,7 +195,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
     else:
         if is_differ:
             backbone_opt = optim.Adam(model.backbone.parameters(), lr=bone_lr, weight_decay=bone_decay)
-            fc_opt = optim.Adam(model.fc.parameters(), lr=fc_lr, weight_decay=fc_decay)
+            fc_opt = optim.Adam(model.classifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
             # fc_scheduler = StepLR(fc_opt, 10, 0.1)
             # backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
             # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)

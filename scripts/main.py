@@ -1,20 +1,16 @@
+import matplotlib
 import numpy as np
 import torchsummary as summary
-from matplotlib import pyplot as plt
-from torchvision.datasets import ImageFolder
-from torch.utils.data import DataLoader, ConcatDataset, Subset
 from basic_image_eda import BasicImageEDA
-from misc import (dataset_to_train, dataset_to_val, dataset_to_test, deploy_pre_trained,
-                  numbers_of_files, deploy_model, train, test, make_plots,
-                  show_image_and_label, count_occurences_per_classes, depict_class_images_share)
-from constants import (TRAIN_PATH, VAL_PATH, TEST_PATH, DATASET_PATH,
-                       AUGMENT_TRANSFORM as aug, DEFAULT_TRANSFORM as no_aug,
-                       PRETRAINED_AUGMENT_TRANSFORM as pretrain_aug)
-import matplotlib
-import optuna
+from optuna import trial, create_study, samplers
 from sklearn.model_selection import KFold
-from optuna import trial, create_trial, create_study, samplers
-from torch.optim.lr_scheduler import StepLR
+from torch.utils.data import DataLoader, ConcatDataset, Subset
+from torchvision.datasets import ImageFolder
+
+from constants import (TRAIN_PATH, VAL_PATH, TEST_PATH, DATASET_PATH,
+                       AUGMENT_TRANSFORM as aug, DEFAULT_TRANSFORM as no_aug)
+from misc import (deploy_model, train, test, make_plots,
+                  show_image_and_label, count_occurences_per_classes, depict_class_images_share)
 
 matplotlib.use('TkAgg')
 
@@ -181,15 +177,15 @@ if __name__ == '__main__':
     # show_dataset_info()
     # automative_optimization()
 
-    # my_cnn = deploy_model()
-    # print(my_cnn)
-    # train(my_cnn, train_loader, val_loader,
-    #       1e-4,
-    #       1e-5,
-    #       1e-5,
-    #       1e-6, 34, True, True)
-    # test(my_cnn, test_loader, test_set.classes, 34, True)
+    my_cnn = deploy_model()
+    print(my_cnn)
+    train(my_cnn, train_loader, val_loader,
+          1e-3,
+          1e-4,
+          0,
+          0, 40, True, True, False)
+    test(my_cnn, test_loader, test_set.classes, 40, True)
 
-    pretrained_model = deploy_pre_trained()
-    train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 36, True, True, True)
-    test(pretrained_model, test_loader, train_set.classes, 36, True)
+    # pretrained_model = deploy_pre_trained()
+    # train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 21, True, False, True)
+    # test(pretrained_model, test_loader, train_set.classes, 21, False)
