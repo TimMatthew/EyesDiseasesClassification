@@ -151,7 +151,7 @@ Precision-recall-F1 score table for model. FC Learning rate: 1e-4, Backbone Lear
 
 Model accuracy. FC Learning rate: 1e-3, FC weight decay: 1e-4
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies35.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies42.png)
 
 Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
@@ -161,7 +161,7 @@ Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
 Model loss. FC Learning rate: 1e-3, FC weight decay: 1e-4
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses35.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses42.png)
 
 Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
@@ -171,10 +171,14 @@ Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
 Model confusion matrix. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix35.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix42.png)
 
 Model accuracy. FC Learning rate: 1e-4, FC weight decay: 1e-5
 
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/precisionrecall42.png)
+
+Precision-recall-F1 score table for model. FC Learning rate: 1e-4, FC Weight decay: 1e-5
 
 ### Custom CNN with multiple optimizers
 
