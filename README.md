@@ -112,7 +112,7 @@ DEFAULT_TRANSFORM = v2.Compose([
 
 Model accuracy. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies7.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/accuracies41.png)
 
 Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
@@ -121,7 +121,7 @@ Model accuracy. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses40.png)
 
 Model loss. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses7.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/losses41.png)
 
 Model loss. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
@@ -131,13 +131,17 @@ Model loss. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
 Model testing confusion matrix. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
 
-![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix7.png)
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/conf-matrix41.png)
 
 Model testing confusion matrix. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
 ![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/precisionrecall40.png)
 
 Precision-recall-F1 score table for model. FC Learning rate: 1e-3, Backbone Learning rate: 1e-4
+
+![](https://github.com/TimMatthew/EyesDiseasesClassification/blob/master/stats/precisionrecall41.png)
+
+Precision-recall-F1 score table for model. FC Learning rate: 1e-4, Backbone Learning rate: 1e-5
 
 ### Custom CNN with a single optimizer
 
