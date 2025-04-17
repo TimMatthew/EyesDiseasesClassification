@@ -181,10 +181,10 @@ if __name__ == '__main__':
     print(my_cnn)
     train(my_cnn, train_loader, val_loader,
           1e-4,
-          1e-5,
           0,
-          0, 40, True, True, False)
-    test(my_cnn, test_loader, test_set.classes, 41, True)
+          1e-5,
+          0, 42, False, True, False)
+    test(my_cnn, test_loader, test_set.classes, 42, True)
 
     # pretrained_model = deploy_pre_trained()
     # train(pretrained_model, train_loader, val_loader, 1e-4, 1e-5, 1e-5, 1e-6, 21, True, False, True)
