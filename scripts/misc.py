@@ -126,22 +126,23 @@ def deploy_model():
 
 
 def deploy_pre_trained():
-    pretrained_model = models.efficientnet_b0(models.EfficientNet_B0_Weights.IMAGENET1K_V1)
+    pretrained_model = models.resnet50(models.ResNet50_Weights.IMAGENET1K_V2)
     print(pretrained_model)
-    pretrained_model.classifier[1] = nn.Linear(pretrained_model.classifier[1].in_features, 4)
+    # pretrained_model.classifier[1] = nn.Linear(pretrained_model.classifier[1].in_features, 4)
+    pretrained_model.fc = nn.Linear(pretrained_model.fc.in_features, 4)
     print(pretrained_model)
 
-    for params in pretrained_model.features[:-3].parameters():
-        params.requires_grad = False
-
-    for params in pretrained_model.features[-3:].parameters():
-        params.requires_grad = True
-
-    for params in pretrained_model.avgpool.parameters():
-        params.requires_grad = True
-
-    for params in pretrained_model.classifier.parameters():
-        params.requires_grad = True
+    # for params in pretrained_model.features[:-3].parameters():
+    #     params.requires_grad = False
+    #
+    # for params in pretrained_model.features[-3:].parameters():
+    #     params.requires_grad = True
+    #
+    # for params in pretrained_model.avgpool.parameters():
+    #     params.requires_grad = True
+    #
+    # for params in pretrained_model.classifier.parameters():
+    #     params.requires_grad = True
 
 
 
@@ -181,7 +182,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
     if is_pretrained:
         if is_differ:
             backbone_opt = optim.Adam(model.parameters(), lr=bone_lr, weight_decay=bone_decay)
-            fc_opt = optim.Adam(model.classifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
+            fc_opt = optim.Adam(model.fc.parameters(), lr=fc_lr, weight_decay=fc_decay)
             # fc_scheduler = StepLR(fc_opt, 10, 0.1)
             # backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
             # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
@@ -194,7 +195,7 @@ def train(model, train_loader, valid_loader, fc_lr, bone_lr, fc_decay, bone_deca
     else:
         if is_differ:
             backbone_opt = optim.Adam(model.backbone.parameters(), lr=bone_lr, weight_decay=bone_decay)
-            fc_opt = optim.Adam(model.classifier.parameters(), lr=fc_lr, weight_decay=fc_decay)
+            fc_opt = optim.Adam(model.fc.parameters(), lr=fc_lr, weight_decay=fc_decay)
             # fc_scheduler = StepLR(fc_opt, 10, 0.1)
             # backbone_scheduler = StepLR(backbone_opt, 10, 0.1)
             # FCReduceLROnPlateauScheduler = ReduceLROnPlateau(fc_opt, mode='max', factor=0.5, patience=3)
@@ -348,7 +349,7 @@ def test(model, test_loader, class_names, number=999, to_save=False):
         plt.xlabel("Predicted labels")
         plt.ylabel("True labels")
         plt.title("Confusion Matrix Test")
-        plt.savefig(rf"..\stats\conf-matrix{number}.png")
+        plt.savefig(rf"..\resnet50_stats\conf-matrix{number}.png")
         plt.clf()
     plt.show()
 
@@ -369,7 +370,7 @@ def show_stats(train_accs, valid_accs, train_losses, valid_losses,
         plt.xlabel('Epochs')
         plt.ylabel('Accuracy (%)')
         plt.legend()
-        plt.savefig(rf"..\stats\accuracies{number}.png")
+        plt.savefig(rf"..\resnet50_stats\accuracies{number}.png")
         plt.clf()
 
         plt.plot(epochs, train_losses, 'y', label='Train loss')
@@ -379,7 +380,7 @@ def show_stats(train_accs, valid_accs, train_losses, valid_losses,
         plt.xlabel('Epochs')
         plt.ylabel('Loss')
         plt.legend()
-        plt.savefig(rf"..\stats\losses{number}.png")
+        plt.savefig(rf"..\resnet50_stats\losses{number}.png")
         plt.clf()
 
 
